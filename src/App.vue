@@ -1,12 +1,3 @@
-<script setup>
-
-</script>
-
 <template>
-  <div>Medium</div>
+  <RouterView />
 </template>
-
-<style scoped>
-
-
-</style>

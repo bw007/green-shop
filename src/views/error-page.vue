@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    Home page
+    404 NOT FOUND    
   </div>
 </template>
 

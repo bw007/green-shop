@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    Home page
+    Blog
   </div>
 </template>
 

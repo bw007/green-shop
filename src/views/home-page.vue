@@ -1,13 +1,14 @@
 <template>
   <div class="container">
-    Home page
+    <sliderPart />
   </div>
 </template>
 
 <script setup>
+  import sliderPart from '@/components/layout/slider-part.vue';
 
 </script>
 
 <style lang="scss">
-  
+
 </style>

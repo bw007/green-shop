@@ -42,6 +42,7 @@
     padding-top: 20px;
     padding-bottom: 18px;
     border-bottom: 0.3px solid #46A35880;
+    margin-bottom: 12px;
   }
 
   &__nav {

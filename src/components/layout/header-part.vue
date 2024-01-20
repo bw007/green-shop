@@ -11,7 +11,18 @@
           <router-link class="header__link" to="/plant">Plant Care</router-link>
           <router-link class="header__link" to="/blog">Blog</router-link>
         </nav>
-        <div class="header__auth"></div>
+        <div class="header__btns">
+          <div class="search">
+            <img src="@/assets/imgs/search.svg" alt="">
+          </div>
+          <div class="search">
+            <img src="@/assets/imgs/cart.svg" alt="">
+          </div>
+          <el-button type="success">
+            <img src="@/assets/imgs/logout.svg" alt="">
+            Login
+          </el-button>
+        </div>
       </div>
     </div>
   </header>
@@ -19,9 +30,10 @@
 
 <script setup>
 
+
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .header {
   &__inner {
     display: flex;
@@ -31,11 +43,16 @@
     padding-bottom: 18px;
     border-bottom: 0.3px solid #46A35880;
   }
-  &__logo {}
+
   &__nav {
     display: flex;
     align-items: center;
     gap: 50px;
+  }
+  &__btns {
+    display: flex;
+    align-items: center;
+    gap: 30px;
   }
   &__link {
     text-decoration: none;
@@ -45,4 +62,11 @@
     font-weight: 400;
     line-height: normal;
   }
-}</style>
+}
+
+.el-button {
+  img {
+    margin-right: 4px;
+  }
+}
+</style>

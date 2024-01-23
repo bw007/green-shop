@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <sliderPart />
+    <slider-part />
   </div>
 </template>
 

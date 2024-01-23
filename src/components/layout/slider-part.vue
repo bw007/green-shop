@@ -6,8 +6,9 @@
       clickable: true
     }"
     :autoplay="{
-      delay: 120000,
+      delay: 4000,
     }"
+    :speed="1000"
     @swiperprogress="onProgress"
     @click="onSlideChange"
   >
@@ -113,13 +114,13 @@
     }
     &__title {
       color: #3D3D3D;
-      font-size: 7rem;
+      font-size: 6rem;
       font-weight: 900;
       line-height: 7rem;
       text-transform: uppercase;
       margin-top: 5px;
       .el-text {
-        font-size: 7rem;
+        font-size: 6rem;
       }
     }
     &__desc {

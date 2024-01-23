@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import { menu } from "@/stores/utils/menu";
-import homeLayout from "@/layouts/homeLayout.vue";
-import homePage from "@/views/home-page.vue";
+import homeLayout from "@/layouts/home-layout.vue";
+import homePage from "@/views/home-view.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -19,7 +19,7 @@ const router = createRouter({
         {
           path: "/:pathMatch(.*)*",
           name: "error",
-          component: import("@/views/error-page.vue"),
+          component: import("@/views/error-view.vue"),
         },
         ...menu,
       ],

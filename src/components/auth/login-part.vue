@@ -1,60 +1,44 @@
 <template>
-  <el-dialog
-    v-model="dialogToggle"
-    title="Tips"
-    width="500"
-    :before-close="handleClose"
-    :close-on-click-modal="false"
-    :close-on-press-escape="false"
+  <el-form 
+    :model="form"
+    class="mt-50"
   >
-    <span>This is a message</span>
-
-    <el-tabs v-model="activeName" @tab-click="handleClick">
-      <el-tab-pane label="Login" name="login">
-        
-        Login
-
-      </el-tab-pane>
-      <el-tab-pane label="Register" name="reg">
-        
-        Register
-
-      </el-tab-pane>
-    </el-tabs>
-
-    <template #footer>
-      <span class="dialog-footer">
-        <el-button @click="handleClose">Cancel</el-button>
-        <el-button type="primary" @click="handleClose">
-          Confirm
-        </el-button>
-      </span>
-    </template>
-
-  </el-dialog>
+    <p class="desc mb-14">Enter your username and password to login.</p>
+    <el-form-item>
+      <el-input v-model="form.email" placeholder="almamun_uxui@outlook.com" />
+    </el-form-item>
+    <el-form-item>
+      <el-input v-model="form.password" placeholder="***********" show-password />
+    </el-form-item>
+    <el-form-item>
+      <el-button type="primary" @click="onSubmit">Create</el-button>
+      <el-button>Cancel</el-button>
+    </el-form-item>
+  </el-form>
 </template>
 
 <script setup>
-import { dialogStore } from "@/stores/utils/dialog";
-import { storeToRefs } from "pinia";
-import { ref } from "vue";
+import { ref } from 'vue';
 
-const activeName = ref('first')
+const form = ref({})
 
-
-const dialog = dialogStore()
-const { dialogToggle } = storeToRefs(dialog)
-
-const handleClick = () => {
-  console.log(activeName.value);
+const onSubmit = () => {
+  console.log(form.value);
 }
-
-const handleClose = () => {
-  dialog.setDialogToggle(false)
-}
-
 </script>
 
-<style lang="">
-  
+<style lang="scss" >
+.el-form {}
+.el-input__inner {
+  padding: 12px 14px;
+}
+.el-input__wrapper {
+  width: 300px !important;
+}
+.desc {
+  color: #3D3D3D;
+  font-size: 1.3rem;
+  line-height: 1.6rem;
+  text-align: center;
+}
 </style>

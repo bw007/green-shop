@@ -25,12 +25,12 @@
         </div>
       </div>
     </div>
-    <login-part />
+    <auth-layout />
   </header>
 </template>
 
 <script setup>
-import loginPart from '@/components/auth/login-part.vue';
+import authLayout from '@/components/auth/auth-layout.vue';
 import { dialogStore } from "@/stores/utils/dialog";
 
 const dialog = dialogStore()

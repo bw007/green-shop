@@ -70,12 +70,12 @@
   register();
 
   const onProgress = (e) => {
-    const [progress] = e.detail;
-    console.log(progress)
+    // const [progress] = e.detail;
+    // console.log(progress)
   };
 
   const onSlideChange = () => {
-    console.log('slide changed')
+    // console.log('slide changed')
   }
 </script>
 

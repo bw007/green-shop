@@ -5,7 +5,7 @@
 </template>
 
 <script setup>
-  import sliderPart from '@/components/layout/slider-part.vue';
+import sliderPart from '@/components/layout/slider-part.vue';
 
 </script>
 

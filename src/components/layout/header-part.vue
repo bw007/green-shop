@@ -18,17 +18,22 @@
           <div class="search">
             <img src="@/assets/imgs/cart.svg" alt="">
           </div>
-          <el-button type="success">
+          <el-button @click="dialog.setDialogToggle(true)" type="success">
             <img src="@/assets/imgs/logout.svg" alt="">
             Login
           </el-button>
         </div>
       </div>
     </div>
+    <login-part />
   </header>
 </template>
 
 <script setup>
+import loginPart from '@/components/auth/login-part.vue';
+import { dialogStore } from "@/stores/utils/dialog";
+
+const dialog = dialogStore()
 
 
 </script>

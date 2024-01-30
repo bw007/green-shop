@@ -14,16 +14,6 @@
       </div>
       <login-part />
     </span>
-    
-
-    <template #footer>
-      <span class="dialog-footer">
-        <el-button @click="handleClose">Cancel</el-button>
-        <el-button type="primary" @click="handleClose">
-          Confirm
-        </el-button>
-      </span>
-    </template>
 
   </el-dialog>
 </template>

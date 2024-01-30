@@ -25,12 +25,12 @@
         </div>
       </div>
     </div>
-    <auth-layout />
+    <auth-dialog />
   </header>
 </template>
 
 <script setup>
-import authLayout from '@/components/auth/auth-layout.vue';
+import authDialog from '@/components/auth/auth-dialog.vue';
 import { dialogStore } from "@/stores/utils/dialog";
 
 const dialog = dialogStore()

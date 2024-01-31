@@ -5,58 +5,56 @@
     :before-close="handleClose"
     :close-on-click-modal="false"
     :close-on-press-escape="false"
-    class="auth-dialog"
+    class="auth px-80 pb-10"
   >
-    <span class="px-99">
-      <div class="auth-title">
-        <el-link class="link" @click="authTrigger = false, loading.setLoadingBtn(false)" :underline="false" :type="!authTrigger ? 'success' : 'default'">Login</el-link>
+    <span>
+      <div class="auth__title mb-40">
+        <el-link 
+          class="auth__link" 
+          @click="authTrigger = false" 
+          :underline="false" 
+          :type="!authTrigger ? 'success' : 'default'"
+        >
+          Login
+        </el-link>
         <el-divider direction="vertical" />
-        <el-link class="link" @click="authTrigger = true, loading.setLoadingBtn(false)" :underline="false" :type="authTrigger ? 'success' : 'default'">Register</el-link>
+        <el-link 
+          class="auth__link" 
+          @click="authTrigger = true" 
+          :underline="false" 
+          :type="authTrigger ? 'success' : 'default'"
+        >
+          Register
+        </el-link>
       </div>
       <login-part v-if="!authTrigger" />
       <register-part v-else />
     </span>
-
+    <template #footer>
+      <div class="auth__bottom"></div>
+    </template>
   </el-dialog>
 </template>
 
 <script setup>
 import { dialogStore } from "@/stores/utils/dialog";
-import { loadingStore } from "@/stores/utils/loading";
 import { storeToRefs } from "pinia";
 import { ref } from "vue";
 import loginPart from "./login-part.vue";
 import registerPart from "./register-part.vue";
 
 const authTrigger = ref(false)
-const loading = loadingStore()
-
 
 const dialog = dialogStore()
 const { dialogToggle } = storeToRefs(dialog)
 
 const handleClose = () => {
   dialog.setDialogToggle(false)
-  loading.setLoadingBtn(false)
+  authTrigger.value = false
 }
 
 </script>
 
 <style lang="scss">
-.auth-dialog {
-  padding: 0 100px;
-}
-.auth-title {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-}
-.link {
-  font-size: 2rem;
-  line-height: 1.6rem;
-}
-.link:hover {
-  color: #46A358;
-}  
+@import './styles/auth.scss'
 </style>

@@ -1,0 +1,3 @@
+<template>
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"><g clip-path="url(#a)"><path fill="#3B5999" d="M13.33 3.32h1.827V.14a23.576 23.576 0 0 0-2.66-.14C6.72 0 8.292 6.542 8.062 7.5H5.156v3.555H8.06V20h3.561v-8.944h2.788l.442-3.555h-3.23c.156-2.354-.635-4.18 1.709-4.18Z"/></g><defs><clipPath id="a"><path fill="#fff" d="M0 0h20v20H0z"/></clipPath></defs></svg>
+</template>

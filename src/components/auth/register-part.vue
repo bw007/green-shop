@@ -6,16 +6,19 @@
   >
     <p class="desc mb-14">Enter your username and password to login.</p>
     <el-form-item>
-      <el-input :input-style="{padding: '16px 4px' }" v-model="form.email" placeholder="Enter your email address" />
+      <el-input :input-style="{padding: '16px 4px' }" v-model="form.user" placeholder="Username" />
+    </el-form-item>
+    <el-form-item>
+      <el-input :input-style="{ padding: '16px 4px' }" v-model="form.email" placeholder="Enter your email address" />
     </el-form-item>
     <el-form-item>
       <el-input :input-style="{ padding: '16px 4px' }" v-model="form.password" placeholder="Password" show-password />
     </el-form-item>
     <el-form-item>
-      <el-link class="login-link" :underline="false" type="success">Forgot Password?</el-link>
+      <el-input :input-style="{ padding: '16px 4px' }" v-model="form.confirmPswd" placeholder="Confirm Password" show-password />
     </el-form-item>
     <el-form-item>
-      <el-button :loading="loadingBtn" class="login-btn" type="success" @click="onSubmit">Login</el-button>
+      <el-button :loading="loadingBtn" class="login-btn" type="success" @click="onSubmit">Register</el-button>
     </el-form-item>
 
     
@@ -31,8 +34,10 @@ const loading = loadingStore()
 const { loadingBtn } = storeToRefs(loading)
 
 const form = ref({
+  user: "",
   email: "",
-  password: ""
+  password: "",
+  confirmPswd: ""
 })
 
 const onSubmit = () => {
@@ -41,27 +46,6 @@ const onSubmit = () => {
 }
 </script>
 
-<style lang="scss">
-.el-form {}
-.el-input__inner {
+<style lang="">
   
-}
-.login-link {
-  font-size: 1.4rem;
-  height: 16px;
-  margin-left: auto;
-}
-.login-btn {
-  width: 100%;
-  font-size: 1.6rem;
-  font-weight: 700;
-  padding: 16px;
-}
-
-.desc {
-  color: #3D3D3D;
-  font-size: 1.3rem;
-  line-height: 1.6rem;
-  text-align: center;
-}
 </style>

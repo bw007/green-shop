@@ -2,27 +2,33 @@
   <el-form 
     :model="form"
     class="mt-50"
+    
   >
     <p class="desc mb-14">Enter your username and password to login.</p>
     <el-form-item>
-      <el-input :input-style="{padding: '12px 4px'}" v-model="form.email" placeholder="almamun_uxui@outlook.com" />
+      <el-input :input-style="{padding: '16px 4px' }" v-model="form.email" placeholder="Enter your email address" />
     </el-form-item>
     <el-form-item>
-      <el-input :input-style="{ padding: '12px 4px' }" v-model="form.password" placeholder="***********" show-password />
+      <el-input :input-style="{ padding: '16px 4px' }" v-model="form.password" placeholder="Password" show-password />
     </el-form-item>
     <el-form-item>
-      <el-link :underline="false" type="success">Forgot Password?</el-link>
+      <el-link class="login-link" :underline="false" type="success">Forgot Password?</el-link>
     </el-form-item>
     <el-form-item>
-      <el-button type="success" @click="onSubmit">Create</el-button>
-      <el-button>Cancel</el-button>
+      <el-button :loading="loadingBtn" class="login-btn" type="success" @click="onSubmit">Login</el-button>
     </el-form-item>
+
+    
   </el-form>
 </template>
 
 <script setup>
-
+import { loadingStore } from "@/stores/utils/loading";
+import { storeToRefs } from "pinia";
 import { ref } from 'vue';
+
+const loading = loadingStore()
+const { loadingBtn } = storeToRefs(loading)
 
 const form = ref({
   email: "",
@@ -30,7 +36,8 @@ const form = ref({
 })
 
 const onSubmit = () => {
-  console.log(form.value);
+  loading.setLoadingBtn(true)
+  console.log(100);
 }
 </script>
 
@@ -38,6 +45,17 @@ const onSubmit = () => {
 .el-form {}
 .el-input__inner {
   
+}
+.login-link {
+  font-size: 1.4rem;
+  height: 16px;
+  margin-left: auto;
+}
+.login-btn {
+  width: 100%;
+  font-size: 1.6rem;
+  font-weight: 700;
+  padding: 16px;
 }
 
 .desc {
